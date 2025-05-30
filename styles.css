@@ -52,6 +52,7 @@ textarea {
     border: none;
     border-radius: 5px;
     text-shadow: 0 0 1px #000;
+    cursor:pointer;
 }
 
 .new-post-button:hover,
@@ -79,10 +80,12 @@ h2 {
 @media ( min-width: 700px ) {
 
     .new-post-form {
-        padding: 6em 5vw 3em;
+        padding: 5em 5vw 3em;
         margin: 0;
-        max-width: 100ch;
-        font-size: 1.25rem;
+        max-width: 80ch;
+        font-size: 1.4rem;
+        gap: 1em;
+        font-weight: 700;
     }
 
     input,

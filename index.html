@@ -8,13 +8,15 @@
     </head>
     <body>
         <nav><p>BlogSpace</p></nav>
-        <form class="new-post-form" id="new-post-form">
-            <label for="new-post-title">Title:</label>
-            <input id="new-post-title" name="new-post-title" />
-            <label for="new-post-content">Post:</label>
-            <textarea id="new-post-content" name="new-post-content"></textarea>
-            <button class="new-post-button" id="new-post-button">Post</button>
-        </form>
+        <div class="form-container">
+            <form class="new-post-form" id="new-post-form">
+                <label for="new-post-title">Title:</label>
+                <input id="new-post-title" name="new-post-title" />
+                <label for="new-post-content">Post:</label>
+                <textarea id="new-post-content" name="new-post-content"></textarea>
+                <button class="new-post-button" id="new-post-button">Post</button>
+            </form>
+        </div>
         <hr class="new-post-divider" />
         <div class="blog-list" id="blog-list"></div>
         <script src="index.js"></script>
