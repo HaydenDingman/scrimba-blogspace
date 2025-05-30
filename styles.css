@@ -26,8 +26,46 @@ nav {
     font-family: "Courier Prime", 'Courier New', Courier, monospace;
 }
 
+.new-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    padding: 50px 1em 1em 1em;
+}
+
+input,
+textarea {
+    padding: .5em;
+    font-family: inherit;
+}
+
+textarea {
+    height: 20vh;
+}
+
+.new-post-button {
+    padding: .5em 1em;
+    font-family: inherit;
+    font-size: 1.15rem;
+    background-color:#3A4069;
+    color:#F5F5EB;
+    border: none;
+    border-radius: 5px;
+    text-shadow: 0 0 1px #000;
+}
+
+.new-post-button:hover,
+.new-post-button:focus {
+    background-color: #8292AE;
+}
+
+.new-post-divider {
+    width: 95%;
+    color: #3A4069;
+}
+
 .blog-list {
-    padding: 40px 10px;
+    padding: 1em;
     line-height: 1.25;
 }
 
@@ -35,11 +73,27 @@ h2 {
     font-size: 1.5rem;
 }
 
+
+/* MEDIA QUERIES */
+
 @media ( min-width: 700px ) {
+
+    .new-post-form {
+        padding: 6em 5vw 3em;
+        margin: 0;
+        max-width: 100ch;
+        font-size: 1.25rem;
+    }
+
+    input,
+    textarea,
+    .new-post-button {
+        font-size: 1.25rem;
+    }
 
     .blog-list {
         max-width: 100ch;
-        padding: 80px 5vw;
+        padding: 1.5em 5vw;
         line-height: 1.5;
     }
 
@@ -48,10 +102,13 @@ h2 {
     }
 
     nav {
-        max-height: 70px;
+        height: 2em;
+        max-height: 80px;
         font-size: 2rem;
         padding-left: 2vw;
     }
+
+    
 
 
 }
