@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #F5F5EB;
+    font-family: "Forum", 'Times New Roman', Times, serif;
+}
+
+nav {
+    display:flex;
+    align-items: center;
+    margin: 0;
+    padding: .5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    max-height: 40px;
+    background-color: #3A4069;
+    color: #F5F5EB;
+    font-weight: 200;
+    font-size: 1.3rem;
+    font-family: "Courier Prime", 'Courier New', Courier, monospace;
+}
+
+.blog-list {
+    padding: 40px 10px;
+    line-height: 1.25;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+@media ( min-width: 700px ) {
+
+    .blog-list {
+        max-width: 100ch;
+        padding: 80px 5vw;
+        line-height: 1.5;
+    }
+
+    .blog-list p {
+        font-size: 1.125rem;
+    }
+
+    nav {
+        max-height: 70px;
+        font-size: 2rem;
+        padding-left: 2vw;
+    }
+
+
+}
