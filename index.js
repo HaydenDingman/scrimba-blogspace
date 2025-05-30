@@ -19,7 +19,26 @@ document.getElementById("new-post-form").addEventListener("submit", (e) => {
     const newPostContent = document.getElementById("new-post-content").value;
     const newPost = { title: newPostTitle,
                         body: newPostContent,};
-    console.log(newPost);
+
+    fetch("https://apis.scrimba.com/jsonplaceholder/posts", { 
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newPost),
+        })
+        .then(res => res.json())
+        .then(data => {
+            const newPostHeader = document.createElement("h2");
+            const newPostBody = document.createElement("p");
+            const newRule = document.createElement("hr");
+            newPostHeader.textContent = data.title;
+            newPostBody.textContent = data.body;
+            document.getElementById("blog-list").prepend(newRule);
+            document.getElementById("blog-list").prepend(newPostBody);
+            document.getElementById("blog-list").prepend(newPostHeader);
+        });
+
     document.getElementById("new-post-form").reset();
     document.getElementById("new-post-title").focus();
 })
