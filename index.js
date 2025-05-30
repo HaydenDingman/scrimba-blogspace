@@ -1,16 +1,20 @@
+let postsArray = [];
+
+function renderPosts() {
+    const html = postsArray.map((post) => {
+        return `<h2>${post.title}</h2>
+        <p>${post.body}</p>
+        <hr />`
+    }).join("");
+
+    document.getElementById("blog-list").innerHTML = html
+}
+
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     .then(res => res.json())
     .then(data => {
-        const postsArr = data.slice(0, 5)
-        let html = ""
-        for (let post of postsArr) {
-            html += `
-                <h2>${post.title}</h2>
-                <p>${post.body}</p>
-                <hr />
-            `
-        }
-        document.getElementById("blog-list").innerHTML = html
+        postsArray = data.slice(0, 5)
+        renderPosts();
     })
 
 document.getElementById("new-post-form").addEventListener("submit", (e) => {
@@ -29,14 +33,8 @@ document.getElementById("new-post-form").addEventListener("submit", (e) => {
         })
         .then(res => res.json())
         .then(data => {
-            const newPostHeader = document.createElement("h2");
-            const newPostBody = document.createElement("p");
-            const newRule = document.createElement("hr");
-            newPostHeader.textContent = data.title;
-            newPostBody.textContent = data.body;
-            document.getElementById("blog-list").prepend(newRule);
-            document.getElementById("blog-list").prepend(newPostBody);
-            document.getElementById("blog-list").prepend(newPostHeader);
+            postsArray.unshift(data);
+            renderPosts();
         });
 
     document.getElementById("new-post-form").reset();
